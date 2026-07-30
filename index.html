@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventario · Pantallas Interactivas · UAE</title>
+<meta name="description" content="Dashboard de inventario de pantallas interactivas de la Unidad de Ayudas Educativas y Centro de Cómputo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%96%A5%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div>
+      <div class="mark">UAE</div>
+      <div class="eyebrow">Unidad de Ayudas Educativas y Centro de Cómputo</div>
+      <h1>Inventario de Pantallas Interactivas</h1>
+      <div class="sub">Estado en tiempo real de instalación por salón, bloque, modelo y equipo asociado.</div>
+    </div>
+    <div class="header-actions">
+      <button class="btn ghost" id="btnExport">↓ Exportar CSV</button>
+      <button class="btn primary" id="btnAdd">+ Añadir pantalla</button>
+    </div>
+  </div>
+
+  <div class="alert" id="alert-box" style="display:none">
+    <span>⚠️</span>
+    <span id="alert-text"></span>
+    <button class="close" id="alertClose">✕</button>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="top-row"><span class="label">Total registrados</span></div>
+      <div class="value" id="kpi-total">—</div>
+      <div class="spark" id="spark-total"></div>
+      <div class="foot"><span class="dot-tag" style="background:var(--blue)"></span>Salones inventariados</div>
+    </div>
+    <div class="kpi">
+      <div class="top-row"><span class="label">Bloques / zonas</span></div>
+      <div class="value" id="kpi-blocks" style="color:var(--violet)">—</div>
+      <div class="spark" id="spark-blocks"></div>
+      <div class="foot"><span class="dot-tag" style="background:var(--violet)"></span>Cobertura institucional</div>
+    </div>
+    <div class="kpi">
+      <div class="top-row"><span class="label">Modelos distintos</span></div>
+      <div class="value" id="kpi-models" style="color:var(--teal)">—</div>
+      <div class="spark" id="spark-models"></div>
+      <div class="foot"><span class="dot-tag" style="background:var(--teal)"></span>Referencias de equipo</div>
+    </div>
+    <div class="kpi">
+      <div class="top-row"><span class="label">Tamaño más común</span></div>
+      <div class="value" id="kpi-size" style="color:var(--amber)">—</div>
+      <div class="spark" id="spark-size"></div>
+      <div class="foot"><span class="dot-tag" style="background:var(--amber)"></span>Pulgadas predominantes</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h2>Estadísticas del inventario</h2>
+        <div class="desc">Distribución de pantallas instaladas por bloque, modelo, tamaño y año</div>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Por bloque</h3>
+        <div class="stat-desc">Total de pantallas por zona</div>
+        <div class="stat-chart"><canvas id="chartBlock"></canvas></div>
+      </div>
+      <div class="stat-card">
+        <h3>Por modelo</h3>
+        <div class="stat-desc">Total por referencia</div>
+        <div class="stat-chart"><canvas id="chartModelo"></canvas></div>
+      </div>
+      <div class="stat-card">
+        <h3>Por pulgadas</h3>
+        <div class="stat-desc">Total por tamaño</div>
+        <div class="stat-chart"><canvas id="chartPulgadas"></canvas></div>
+      </div>
+      <div class="stat-card">
+        <h3>Por año</h3>
+        <div class="stat-desc">Fecha de instalación</div>
+        <div class="stat-chart"><canvas id="chartAnio"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h2>Inventario detallado</h2>
+        <div class="desc">Filtra, busca y ordena todos los registros</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search" placeholder="Buscar por salón, serial, activo fijo, modelo...">
+      <select id="filterBloque"></select>
+      <select id="filterModelo"></select>
+      <select id="filterPulgadas"></select>
+      <select id="filterAnio"></select>
+    </div>
+    <div class="controls">
+      <button class="btn small ghost" id="btnReset" style="margin-left:auto">Limpiar filtros</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-key="bloque">Bloque</th>
+            <th data-key="salon">Salón</th>
+            <th data-key="pulgadas">Pulgadas</th>
+            <th data-key="modelo">Modelo</th>
+            <th data-key="anio">Año</th>
+            <th data-key="activo_fijo_pantalla">Activo Fijo</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div id="empty" class="empty-state" style="display:none">
+      <div class="big">🔍</div>
+      No se encontraron registros con esos filtros.
+    </div>
+    <div class="table-footer">
+      <span id="count-info">—</span>
+      <span>Clic en una fila para ver el detalle completo</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="side-panel" id="detail">
+  <button class="close-x" id="closeDetail">✕</button>
+  <div id="detail-content"></div>
+</div>
+
+<div class="side-panel" id="formPanel">
+  <button class="close-x" id="closeForm">✕</button>
+  <h3>Añadir pantalla</h3>
+  <div class="panel-sub">Registra una nueva pantalla o salón en el inventario</div>
+  <form id="addForm">
+    <div class="form-grid">
+      <div class="field full">
+        <label>Bloque / Zona *</label>
+        <input type="text" id="f-bloque" placeholder="Ej. Bloque 10" required>
+      </div>
+      <div class="field">
+        <label>Salón *</label>
+        <input type="text" id="f-salon" placeholder="Ej. 10-11" required>
+      </div>
+      <div class="field">
+        <label>Pulgadas</label>
+        <select id="f-pulgadas">
+          <option value="">—</option>
+          <option value='65"'>65"</option>
+          <option value='75"'>75"</option>
+          <option value='86"'>86"</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Modelo</label>
+        <input type="text" id="f-modelo" placeholder="Ej. T7-65">
+      </div>
+      <div class="field">
+        <label>Activo fijo (pantalla)</label>
+        <input type="text" id="f-activo">
+      </div>
+      <div class="field">
+        <label>Serial (pantalla)</label>
+        <input type="text" id="f-serial">
+      </div>
+      <div class="field">
+        <label>Fecha instalación</label>
+        <input type="date" id="f-fecha">
+      </div>
+      <div class="field">
+        <label>Características OPS</label>
+        <input type="text" id="f-caract-ops" placeholder="Ej. i7 - 16GB - 256GB">
+      </div>
+      <div class="field full">
+        <label>Accesorios</label>
+        <textarea id="f-accesorios" placeholder="Cables, control remoto, lápices..."></textarea>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn ghost" id="cancelForm">Cancelar</button>
+      <button type="submit" class="btn primary">Guardar pantalla</button>
+    </div>
+    <div class="form-note">Los registros que añadas aquí se guardan en tu navegador y se combinan con el inventario original. Si abres este archivo en otro equipo, no verás estos cambios ahí.</div>
+  </form>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
