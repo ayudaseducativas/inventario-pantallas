@@ -25,32 +25,13 @@
     </div>
   </div>
 
-  <nav class="quicknav" aria-label="Navegación rápida">
-    <a href="#resumen">
-      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="8" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="10" y="7" width="4" height="13" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="17" y="3" width="4" height="17" rx="1" stroke="currentColor" stroke-width="1.8"/></svg>
-      <span>Resumen</span>
-    </a>
-    <a href="#estadisticas">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M3 17L9 11L13 15L21 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 6H21V12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Estadísticas</span>
-    </a>
-    <a href="#inventario">
-      <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5H20.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 9.5V20" stroke="currentColor" stroke-width="1.8"/></svg>
-      <span>Inventario detallado</span>
-    </a>
-    <a href="#reportes">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-      <span>Reportes pantallas</span>
-    </a>
-  </nav>
-
   <div class="alert" id="alert-box" style="display:none">
     <span>⚠️</span>
     <span id="alert-text"></span>
     <button class="close" id="alertClose">✕</button>
   </div>
 
-  <div class="kpi-grid" id="resumen">
+  <div class="kpi-grid">
     <div class="kpi">
       <div class="top-row"><span class="label">Total registrados</span></div>
       <div class="value" id="kpi-total">—</div>
@@ -77,7 +58,7 @@
     </div>
   </div>
 
-  <div class="panel" id="estadisticas">
+  <div class="panel">
     <div class="panel-head">
       <div>
         <h2>Estadísticas del inventario</h2>
@@ -108,7 +89,7 @@
     </div>
   </div>
 
-  <div class="panel" id="inventario">
+  <div class="panel">
     <div class="panel-head">
       <div>
         <h2>Inventario detallado</h2>
@@ -150,16 +131,6 @@
       <span id="count-info">—</span>
       <span>Clic en una fila para ver el detalle completo</span>
     </div>
-  </div>
-
-  <div class="panel" id="reportes">
-    <div class="panel-head">
-      <div>
-        <h2>Reportes pantallas</h2>
-        <div class="desc">Observaciones y carpetas de Google Drive con el soporte/historial de cada pantalla</div>
-      </div>
-    </div>
-    <div id="reportesList"></div>
   </div>
 
 </div>
@@ -217,14 +188,6 @@
       <div class="field full">
         <label>Accesorios</label>
         <textarea id="f-accesorios" placeholder="Cables, control remoto, lápices..."></textarea>
-      </div>
-      <div class="field full">
-        <label>Observaciones</label>
-        <textarea id="f-observaciones" placeholder="Ej. Pantalla presentó fallas, se envió a garantía..."></textarea>
-      </div>
-      <div class="field full">
-        <label>Link de reporte (carpeta de Drive)</label>
-        <input type="url" id="f-reporte-link" placeholder="https://drive.google.com/drive/folders/...">
       </div>
     </div>
     <div class="form-actions">
