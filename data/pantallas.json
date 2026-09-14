@@ -16,9 +16,7 @@
     "activo_fijo_ups": "U15280502554",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 1,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 1
   },
   {
     "bloque": "Bloque 1",
@@ -37,9 +35,7 @@
     "activo_fijo_ups": "U15280503767",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 2,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 2
   },
   {
     "bloque": "Bloque 1",
@@ -58,9 +54,7 @@
     "activo_fijo_ups": "U15280503775",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 3,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 3
   },
   {
     "bloque": "Bloque 1",
@@ -79,9 +73,7 @@
     "activo_fijo_ups": "U15280503744",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 4,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 4
   },
   {
     "bloque": "Bloque 1",
@@ -100,9 +92,7 @@
     "activo_fijo_ups": "U15280509717",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 5,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 5
   },
   {
     "bloque": "Bloque 2",
@@ -121,9 +111,7 @@
     "activo_fijo_ups": "U15280503762",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 6,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 6
   },
   {
     "bloque": "Bloque 2",
@@ -142,9 +130,7 @@
     "activo_fijo_ups": "U15200503606",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 7,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 7
   },
   {
     "bloque": "Bloque 2",
@@ -163,9 +149,7 @@
     "activo_fijo_ups": "U15200503639",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 8,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 8
   },
   {
     "bloque": "Bloque 2",
@@ -184,9 +168,7 @@
     "activo_fijo_ups": "U15280503745",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 9,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 9
   },
   {
     "bloque": "Bloque 2",
@@ -205,9 +187,7 @@
     "activo_fijo_ups": "U15280503772",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 10,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 10
   },
   {
     "bloque": "Bloque 3",
@@ -226,9 +206,7 @@
     "activo_fijo_ups": "U15200503640",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 11,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 11
   },
   {
     "bloque": "Bloque 3",
@@ -247,9 +225,7 @@
     "activo_fijo_ups": "U15280503718",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 12,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 12
   },
   {
     "bloque": "Bloque 3",
@@ -268,9 +244,7 @@
     "activo_fijo_ups": "U15200503638",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 13,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 13
   },
   {
     "bloque": "Bloque 4",
@@ -289,9 +263,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 14,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 14
   },
   {
     "bloque": "Bloque 4",
@@ -310,9 +282,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 15,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 15
   },
   {
     "bloque": "Bloque 4",
@@ -331,9 +301,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 16,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 16
   },
   {
     "bloque": "Bloque 4",
@@ -352,9 +320,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 17,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 17
   },
   {
     "bloque": "Bloque 4",
@@ -373,9 +339,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 18,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 18
   },
   {
     "bloque": "Bloque 5",
@@ -394,9 +358,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 19,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 19
   },
   {
     "bloque": "Bloque 5",
@@ -415,9 +377,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 20,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 20
   },
   {
     "bloque": "Bloque 5",
@@ -436,9 +396,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 21,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 21
   },
   {
     "bloque": "Bloque 5",
@@ -457,9 +415,7 @@
     "activo_fijo_ups": "U15200503637",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 22,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 22
   },
   {
     "bloque": "Bloque 5",
@@ -478,9 +434,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 23,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 23
   },
   {
     "bloque": "Bloque 6",
@@ -499,9 +453,7 @@
     "activo_fijo_ups": "U15280502366",
     "anio": "2022",
     "salon_corregido": false,
-    "id": 24,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 24
   },
   {
     "bloque": "Bloque 6",
@@ -520,9 +472,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 25,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 25
   },
   {
     "bloque": "Bloque 6",
@@ -541,9 +491,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 26,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 26
   },
   {
     "bloque": "Bloque 6",
@@ -562,9 +510,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 27,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 27
   },
   {
     "bloque": "Bloque 6",
@@ -583,9 +529,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 28,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 28
   },
   {
     "bloque": "Bloque 7",
@@ -604,9 +548,7 @@
     "activo_fijo_ups": null,
     "anio": "2025",
     "salon_corregido": false,
-    "id": 29,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 29
   },
   {
     "bloque": "Bloque 7",
@@ -625,9 +567,7 @@
     "activo_fijo_ups": "U15280503774",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 30,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 30
   },
   {
     "bloque": "Bloque 7",
@@ -646,9 +586,7 @@
     "activo_fijo_ups": null,
     "anio": "2025",
     "salon_corregido": false,
-    "id": 31,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 31
   },
   {
     "bloque": "Bloque 8",
@@ -667,9 +605,7 @@
     "activo_fijo_ups": "U15280503768",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 32,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 32
   },
   {
     "bloque": "Bloque 8",
@@ -688,9 +624,7 @@
     "activo_fijo_ups": null,
     "anio": "2025",
     "salon_corregido": false,
-    "id": 33,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 33
   },
   {
     "bloque": "Bloque 9",
@@ -709,9 +643,7 @@
     "activo_fijo_ups": "U15280503766",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 34,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 34
   },
   {
     "bloque": "Bloque 9",
@@ -730,9 +662,7 @@
     "activo_fijo_ups": "U15200503636",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 35,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 35
   },
   {
     "bloque": "CEP",
@@ -751,9 +681,7 @@
     "activo_fijo_ups": "U15280503764",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 36,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 36
   },
   {
     "bloque": "CEP",
@@ -772,9 +700,7 @@
     "activo_fijo_ups": "U15280503763",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 37,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 37
   },
   {
     "bloque": "CEP",
@@ -793,9 +719,7 @@
     "activo_fijo_ups": "U15280503770",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 38,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 38
   },
   {
     "bloque": "CEP",
@@ -814,9 +738,7 @@
     "activo_fijo_ups": "U15280503771",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 39,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 39
   },
   {
     "bloque": "CEP",
@@ -835,9 +757,7 @@
     "activo_fijo_ups": "U15280503765",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 40,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 40
   },
   {
     "bloque": "CEP",
@@ -856,9 +776,7 @@
     "activo_fijo_ups": "U15200501572",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 41,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 41
   },
   {
     "bloque": "CEP",
@@ -877,9 +795,7 @@
     "activo_fijo_ups": "U15280503777",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 42,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 42
   },
   {
     "bloque": "CEP",
@@ -898,9 +814,7 @@
     "activo_fijo_ups": "U15280503743",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 43,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 43
   },
   {
     "bloque": "CEP",
@@ -919,9 +833,7 @@
     "activo_fijo_ups": "U15280502401",
     "anio": "2024",
     "salon_corregido": false,
-    "id": 44,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 44
   },
   {
     "bloque": "CEP",
@@ -940,9 +852,7 @@
     "activo_fijo_ups": "U15280503769",
     "anio": "2025",
     "salon_corregido": false,
-    "id": 45,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 45
   },
   {
     "bloque": "Derecho",
@@ -961,9 +871,7 @@
     "activo_fijo_ups": "U15200503689",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 46,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 46
   },
   {
     "bloque": "Derecho",
@@ -982,9 +890,7 @@
     "activo_fijo_ups": "U15200503688",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 47,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 47
   },
   {
     "bloque": "Derecho",
@@ -1003,9 +909,7 @@
     "activo_fijo_ups": "U15200503683",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 48,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 48
   },
   {
     "bloque": "Derecho",
@@ -1024,9 +928,7 @@
     "activo_fijo_ups": "U15200503684",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 49,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 49
   },
   {
     "bloque": "Derecho",
@@ -1045,9 +947,7 @@
     "activo_fijo_ups": "U15200503685",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 50,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 50
   },
   {
     "bloque": "Derecho",
@@ -1066,9 +966,7 @@
     "activo_fijo_ups": "U15200503686",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 51,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 51
   },
   {
     "bloque": "Derecho",
@@ -1087,9 +985,7 @@
     "activo_fijo_ups": "U15200503687",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 52,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 52
   },
   {
     "bloque": "Idiomas",
@@ -1108,9 +1004,7 @@
     "activo_fijo_ups": "U15200503681",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 53,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 53
   },
   {
     "bloque": "Idiomas",
@@ -1129,9 +1023,7 @@
     "activo_fijo_ups": "U15200503682",
     "anio": "2026",
     "salon_corregido": false,
-    "id": 54,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 54
   },
   {
     "bloque": "Otros",
@@ -1150,9 +1042,7 @@
     "activo_fijo_ups": null,
     "anio": "2025",
     "salon_corregido": false,
-    "id": 55,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 55
   },
   {
     "bloque": "Otros",
@@ -1171,9 +1061,7 @@
     "activo_fijo_ups": "U15200500506",
     "anio": "2023",
     "salon_corregido": false,
-    "id": 56,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 56
   },
   {
     "bloque": "Otros",
@@ -1192,9 +1080,7 @@
     "activo_fijo_ups": null,
     "anio": "2026",
     "salon_corregido": false,
-    "id": 57,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 57
   },
   {
     "bloque": "Otros",
@@ -1213,8 +1099,6 @@
     "activo_fijo_ups": null,
     "anio": "2025",
     "salon_corregido": false,
-    "id": 58,
-    "observaciones": null,
-    "reporte_link": null
+    "id": 58
   }
 ]
