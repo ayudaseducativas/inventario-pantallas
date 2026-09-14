@@ -1,7 +1,7 @@
 let customData = [];
 let ALL = [];
 
-const COLORS = ['#7B6EF6','#2FC4B6','#FF8A5B','#5B4FD9','#4FE0CF','#FFB088','#9C90FF','#1FA89A'];
+const COLORS = ['#1B2A5B','#F2B705','#3B4E8F','#C98A02','#6B7CB0','#E8C34D','#253972','#A9760A'];
 
 const fmtDate = s => {
   if(!s) return '—';
@@ -88,13 +88,15 @@ async function saveNewEntry(entry){
 
 let state = { search:'', bloque:'todos', modelo:'todos', pulgadas:'todos', anio:'todos', sortKey:'bloque', sortDir:1 };
 
+function escAttr(str){ return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
+
 function populateSelects(){
   document.getElementById('filterBloque').innerHTML = '<option value="todos">Todos los bloques</option>' +
-    uniq(ALL.map(d=>d.bloque)).map(b=>`<option value="${b}">${b.trim()}</option>`).join('');
+    uniq(ALL.map(d=>d.bloque)).map(b=>`<option value="${escAttr(b)}">${b.trim()}</option>`).join('');
   document.getElementById('filterModelo').innerHTML = '<option value="todos">Todos los modelos</option>' +
-    uniq(ALL.map(d=>d.modelo)).map(m=>`<option value="${m}">${m}</option>`).join('');
+    uniq(ALL.map(d=>d.modelo)).map(m=>`<option value="${escAttr(m)}">${m}</option>`).join('');
   document.getElementById('filterPulgadas').innerHTML = '<option value="todos">Todas las pulgadas</option>' +
-    uniq(ALL.map(d=>d.pulgadas)).map(m=>`<option value="${m}">${m}</option>`).join('');
+    uniq(ALL.map(d=>d.pulgadas)).map(m=>`<option value="${escAttr(m)}">${m}</option>`).join('');
   document.getElementById('filterAnio').innerHTML = '<option value="todos">Todos los años</option>' +
     uniq(ALL.map(d=>d.anio)).sort().map(m=>`<option value="${m}">${m}</option>`).join('');
 }
@@ -174,11 +176,11 @@ function updateKPIs(){
   const dated = ALL.filter(d=>d.fecha_instalacion).sort((a,b)=> new Date(a.fecha_instalacion)-new Date(b.fecha_instalacion));
   let cum = 0;
   const series = dated.map(d=> ++cum);
-  sparkline(document.getElementById('spark-total'), series.length?series:[0,total], '#7B6EF6');
-  sparkline(document.getElementById('spark-blocks'), Array.from({length:blocks},(_,i)=>i+1), '#7B6EF6');
-  sparkline(document.getElementById('spark-models'), Array.from({length:models},(_,i)=>i+1), '#2FC4B6');
+  sparkline(document.getElementById('spark-total'), series.length?series:[0,total], '#1B2A5B');
+  sparkline(document.getElementById('spark-blocks'), Array.from({length:blocks},(_,i)=>i+1), '#1B2A5B');
+  sparkline(document.getElementById('spark-models'), Array.from({length:models},(_,i)=>i+1), '#F2B705');
   const sizeVals = Object.values(sizeCounts).sort((a,b)=>a-b);
-  sparkline(document.getElementById('spark-size'), sizeVals.length>1?sizeVals:[0,...sizeVals], '#FF8A5B');
+  sparkline(document.getElementById('spark-size'), sizeVals.length>1?sizeVals:[0,...sizeVals], '#C98A02');
 }
 
 function openDetail(id){
@@ -197,6 +199,8 @@ function openDetail(id){
     ['Serial — OPS', d.serial_ops],
     ['Características OPS', d.caracteristicas_ops],
     ['Activo Fijo — UPS', d.activo_fijo_ups],
+    ['Observaciones', d.observaciones],
+    ['Link de reporte', d.reporte_link ? `<a class="dl-link" href="${d.reporte_link}" target="_blank" rel="noopener">Ver carpeta en Drive ↗</a>` : null],
   ];
   document.getElementById('detail-content').innerHTML = `
     <h3>Salón ${d.salon||'—'}</h3>
@@ -268,6 +272,8 @@ document.getElementById('addForm').addEventListener('submit', async e=>{
     anio: fecha ? fecha.slice(0,4) : null,
     caracteristicas_ops: document.getElementById('f-caract-ops').value.trim() || null,
     accesorios: document.getElementById('f-accesorios').value.trim() || null,
+    observaciones: document.getElementById('f-observaciones').value.trim() || null,
+    reporte_link: document.getElementById('f-reporte-link').value.trim() || null,
     serial_ops: null, activo_fijo_ups: null,
     custom:true,
   };
@@ -302,10 +308,10 @@ function buildStatCharts(){
   charts.block = new Chart(document.getElementById('chartBlock'), {
     type:'bar',
     data:{ labels: bloques.map(b=>b.trim()), datasets:[
-      {label:'Pantallas', data:countByBlock, backgroundColor:'#7B6EF6', borderRadius:5, maxBarThickness:20},
+      {label:'Pantallas', data:countByBlock, backgroundColor:'#1B2A5B', borderRadius:5, maxBarThickness:20},
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
-      scales:{ x:{ticks:{font:{size:9}}, grid:{display:false}}, y:{beginAtZero:true, ticks:{precision:0,font:{size:10}}, grid:{color:'#EFE7DA'}} },
+      scales:{ x:{ticks:{font:{size:9}}, grid:{display:false}}, y:{beginAtZero:true, ticks:{precision:0,font:{size:10}}, grid:{color:'#E4E7EF'}} },
       plugins:{ legend:{display:false} },
       onClick:(evt, els)=>{ if(els.length){ const b=bloques[els[0].index]; state.bloque=b; document.getElementById('filterBloque').value=b; renderTable(); } }
     }
@@ -328,9 +334,9 @@ function buildStatCharts(){
   const pulgCounts = pulg.map(p=>ALL.filter(d=>d.pulgadas===p).length);
   charts.pulgadas = new Chart(document.getElementById('chartPulgadas'), {
     type:'bar',
-    data:{ labels: pulg, datasets:[{ data: pulgCounts, backgroundColor:['#7B6EF6','#2FC4B6','#FF8A5B','#9C90FF'], borderRadius:6, maxBarThickness:34 }] },
+    data:{ labels: pulg, datasets:[{ data: pulgCounts, backgroundColor:['#1B2A5B','#F2B705','#3B4E8F','#C98A02'], borderRadius:6, maxBarThickness:34 }] },
     options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
-      scales:{ x:{beginAtZero:true, ticks:{precision:0,font:{size:10}}, grid:{color:'#EFE7DA'}}, y:{grid:{display:false}, ticks:{font:{size:11}}} },
+      scales:{ x:{beginAtZero:true, ticks:{precision:0,font:{size:10}}, grid:{color:'#E4E7EF'}}, y:{grid:{display:false}, ticks:{font:{size:11}}} },
       plugins:{ legend:{display:false} },
       onClick:(evt, els)=>{ if(els.length){ const p=pulg[els[0].index]; state.pulgadas=p; document.getElementById('filterPulgadas').value=p; renderTable(); } }
     }
@@ -341,9 +347,9 @@ function buildStatCharts(){
   const anioCounts = anios.map(a=>ALL.filter(d=>d.anio===a).length);
   charts.anio = new Chart(document.getElementById('chartAnio'), {
     type:'bar',
-    data:{ labels: anios, datasets:[{ data: anioCounts, backgroundColor:'#7B6EF6', borderRadius:6, maxBarThickness:34 }] },
+    data:{ labels: anios, datasets:[{ data: anioCounts, backgroundColor:'#1B2A5B', borderRadius:6, maxBarThickness:34 }] },
     options:{ responsive:true, maintainAspectRatio:false,
-      scales:{ x:{grid:{display:false}, ticks:{font:{size:11}}}, y:{beginAtZero:true, ticks:{precision:0,font:{size:10}}, grid:{color:'#EFE7DA'}} },
+      scales:{ x:{grid:{display:false}, ticks:{font:{size:11}}}, y:{beginAtZero:true, ticks:{precision:0,font:{size:10}}, grid:{color:'#E4E7EF'}} },
       plugins:{ legend:{display:false} },
       onClick:(evt, els)=>{ if(els.length){ const a=anios[els[0].index]; state.anio=a; document.getElementById('filterAnio').value=a; renderTable(); } }
     }
@@ -356,11 +362,36 @@ function buildStatCharts(){
   console.assert(anioCounts.reduce((a,b)=>a+b,0)===ALL.filter(d=>d.anio).length, 'Por año no cuadra');
 }
 
+function renderReportes(){
+  const wrap = document.getElementById('reportesList');
+  const conReporte = ALL.filter(d => (d.observaciones && d.observaciones.trim()) || (d.reporte_link && d.reporte_link.trim()));
+
+  if(conReporte.length === 0){
+    wrap.innerHTML = `<div class="empty-state" style="padding:30px 20px">
+      <div class="big">🗂️</div>
+      Aún no hay observaciones ni carpetas de Drive cargadas.<br>
+      Agrégalas desde "+ Añadir pantalla" o editando las columnas <b>observaciones</b> / <b>reporte_link</b> directamente en tu Google Sheet.
+    </div>`;
+    return;
+  }
+
+  wrap.innerHTML = conReporte.map(d => `
+    <div class="report-row">
+      <div class="report-main">
+        <div class="report-title">${d.salon||'—'} <span class="report-bloque">${d.bloque ? d.bloque.trim() : ''}</span></div>
+        <div class="report-obs">${d.observaciones ? d.observaciones : 'Sin observaciones registradas.'}</div>
+      </div>
+      ${d.reporte_link ? `<a class="btn small primary report-link" href="${d.reporte_link}" target="_blank" rel="noopener">📁 Ver en Drive ↗</a>` : ''}
+    </div>
+  `).join('');
+}
+
 function rebuildAll(){
   populateSelects();
   updateKPIs();
   renderTable();
   buildStatCharts();
+  renderReportes();
 }
 
 (async function init(){
@@ -379,4 +410,19 @@ function rebuildAll(){
     ALL = [];
   }
   rebuildAll();
+
+  // Resalta en la navbar la sección visible mientras se hace scroll
+  const navLinks = document.querySelectorAll('.quicknav a');
+  const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if(sections.length && 'IntersectionObserver' in window){
+    const spy = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id = '#' + entry.target.id;
+          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(sec => spy.observe(sec));
+  }
 })();
